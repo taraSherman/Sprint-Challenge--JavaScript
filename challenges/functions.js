@@ -7,6 +7,26 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
+const items = [1, 2, 3, 4, 'salad', 'dessert', 'soup', 'steak']
+function consume(item, list, cb) {
+  for (let i = 0; i < items.length; i++) {
+    if (items[i] === item) {
+      return cb(true);
+    }
+  }
+  return cb(false);
+};
+consume('salad', items, (result) => {
+  console.log(result ? true : false);
+});
+
+consume('soup', items, (result) => {
+  console.log(result ? true : false);
+});
+
+consume('ice cream', items, (result) => {
+  console.log(result ? true : false);
+});
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
