@@ -4,7 +4,7 @@
 //   Given the following information about dinosaurs, create 3 objects: 
 //   Use this pattern to create your objects: 
 //   object name, diet, weight, length, period
-*/
+
 const tyrannosaurus = {
   diet: 'carnivorous',
   weight: '7000kg',
@@ -47,7 +47,7 @@ console.log(stegosaurus.length);
 console.log(tyrannosaurus.period);
 
 
-// // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
+//Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
 tyrannosaurus.roar = "RAWERSRARARWERSARARARRRR!";
 console.log(tyrannosaurus.roar);
 
@@ -106,7 +106,7 @@ console.log(uni);
 // Given this zoo data from around the United States, follow the instructions below.  Use the specific array methods in the requests below to solve the problems.
 
 
-zooAnimals = [{ "animal_name": "Jackal, asiatic", "population": 5, "scientific_name": "Canis aureus", "state": "Kentucky" },
+const zooAnimals = [{ "animal_name": "Jackal, asiatic", "population": 5, "scientific_name": "Canis aureus", "state": "Kentucky" },
 { "animal_name": "Screamer, southern", "population": 1, "scientific_name": "Chauna torquata", "state": "Alabama" },
 { "animal_name": "White spoonbill", "population": 8, "scientific_name": "Platalea leucordia", "state": "Georgia" },
 { "animal_name": "White-cheeked pintail", "population": 1, "scientific_name": "Anas bahamensis", "state": "Oregon" },
@@ -122,8 +122,9 @@ zooAnimals = [{ "animal_name": "Jackal, asiatic", "population": 5, "scientific_n
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-
-
+const animalNames = [];
+zooAnimals.forEach(animal => animalNames.push(`${animal.animal_name} ${animal.scientific_name}`));
+console.log(animalNames);
 
 /* Request 2: .map()    
 
