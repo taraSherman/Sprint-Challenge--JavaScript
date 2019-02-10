@@ -36,7 +36,9 @@ consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
 // Explanation: 
-
+/*
+The function `myFunction` is the parent function. When `myFunction` is called, it executes its first command (console.log the `external` variable). Then it moves on to its next step, which is declaring the `internal` variable. When the `nestedFunction` is called, JavaScript looks for the `internal` variable to console.log, but cannot find it. However, because inner functions have access to the variables of outer functions (lexical scoping), its next step is to look upward, into the parent function (`myFunction`) to try to find the `internal` variable. When it does, it can then take that last step, which is console.log the `internal` variable.
+*/
 
 const external = "I'm outside the function";
 
