@@ -8,17 +8,27 @@
 */
 
 
+function consume(param1, param2, cb) {
+  return cb(param1, param2);
+}
+
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
+let add = (x, y) => x + y;
 
+let multiply = (x, y) => x * y;
+
+function greeting(firstName, lastName) {
+  return (`Hello ${firstName} ${lastName}, nice to meet you!`);
+};
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// consume(2,2,add); // 4
-// consume(10,16,multiply); // 160
-// consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+consume(2,2,add); // 4
+consume(10,16,multiply); // 160
+consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
@@ -26,7 +36,9 @@
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
 // Explanation: 
-
+/*
+The function `myFunction` is the parent function. When `myFunction` is called, it executes its first command (console.log the `external` variable). Then it moves on to its next step, which is declaring the `internal` variable. When the `nestedFunction` is called, JavaScript looks for the `internal` variable to console.log, but cannot find it. However, because inner functions have access to the variables of outer functions (lexical scoping), its next step is to look upward, into the parent function (`myFunction`) to try to find the `internal` variable. When it does, it can then take that last step, which is console.log the `internal` variable.
+*/
 
 const external = "I'm outside the function";
 
